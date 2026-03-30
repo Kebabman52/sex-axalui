@@ -2989,6 +2989,9 @@ function Library:CreateWindow(...)
         ZIndex = 1,
         Parent = ScreenGui;
     });
+    Library:AddToRegistry(Outer, {
+        BackgroundColor3 = 'MainColor';
+    });
     Library:Create('UICorner', {
         CornerRadius = UDim.new(0, 6);
         Parent = Outer;
