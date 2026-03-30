@@ -3030,10 +3030,10 @@ function Library:CreateWindow(...)
     end))
 
     local WindowLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 270, 0, 0);
+        Position = UDim2.new(0, 0, 0, 0);
         Size = UDim2.new(1, 2, 0, 25);
         Text = Config.Title or '';
-        TextXAlignment = Enum.TextXAlignment.Left;
+        TextXAlignment = Enum.TextXAlignment.Center;
         ZIndex = 1;
         Parent = Inner;
     });
@@ -3699,103 +3699,3 @@ Players.PlayerAdded:Connect(OnPlayerChange);
 Players.PlayerRemoving:Connect(OnPlayerChange);
 
 getgenv().Library = Library
-
-local flags = {
-
-}
-
-local lib_window = Library:CreateWindow({
-    Title = 'V1 | Nigga Hack | ' ..identifyexecutor(),
-    Center = true,
-    AutoShow = true,
-    TabPadding = 8,
-    MenuFadeTime = 0.2,
-})
-
-local Tabs = {
-    Main   = lib_window:AddTab('Main'),
-    Combat = lib_window:AddTab('Combat'),
-    Visuals = lib_window:AddTab('Visuals'),
-    ['UI Settings'] = lib_window:AddTab('UI Settings')
-}
-
-local MiddleGroup = Tabs.Main:AddMiddleGroupbox('Middle')
-local tuffgroup   = Tabs.Main:AddLeftGroupbox('This is left..')
-local freakintuff = Tabs.Main:AddRightGroupbox('Cro Shush')
---Main UI end
-
---MiddleGroup:AddToggle('tuffasstgl', {
---    Text = 'Hi',
---    Default = false,
---    Callback = function()
---
---    end
---})
---MiddleGroup:AddButton({
---    Text = 'hi',
---    Tooltip = 'tuff ass fucking button nigga',
---    Func = function()
---    end,
---})
---tuffgroup:AddToggle('tuffasstgl', {
---    Text = 'Hi',
---    Default = false,
---    Callback = function()
---
---    end
---})
---freakintuff:AddToggle('tuffasstgl', {
---    Text = 'Hi',
---    Default = false,
---    Callback = function()
---
---    end
---})
---freakintuff:AddSlider('MySlider', {
---    Text = 'Tuff slider',
---    Default = 0,
---    Min = 0,
---    Max = 5,
---    Rounding = 1,
---    Compact = false,
---    Callback = function(Value)
---
---    end
---})
-
-Library:SetWatermark('Nigga Hack | NiggaDriver | '..identifyexecutor())
-
-local ThemeManager = loadstring(game:HttpGet('https://gist.githubusercontent.com/stunsua/a087cc3c679cc125909766c69c66432d/raw/9c035483bf51f59c452b73b38bff2b2c42abd496/gistfile1.txt'))()
-local SaveManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/SaveManager.lua'))()
-
-local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
-MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = true, Text = 'Menu keybind' })
-local credsninfo = Tabs['UI Settings']:AddMiddleGroupbox('Information')
-credsninfo:AddLabel('NiggaHack made by niggas, ')
-credsninfo:AddLabel('for niggas.')
-credsninfo:AddLabel('')
-credsninfo:AddLabel('')
-credsninfo:AddLabel('')
-credsninfo:AddLabel([[
-Devlog: 
-+ Updated Bypass
-+ Fixes
-]])
-credsninfo:AddLabel('')
-credsninfo:AddButton({
-    Text = 'Discord Invite',
-    Func = function()
-        setclipboard(tostring('Fuck Niggers'))
-        Library:Notify('Copied to clipboard')
-    end
-})
-Library.ToggleKeybind = Options.MenuKeybind 
-ThemeManager:SetLibrary(Library)
-SaveManager:SetLibrary(Library)
-SaveManager:IgnoreThemeSettings()
-SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
-ThemeManager:SetFolder('MyScriptHub')
-SaveManager:SetFolder('NiggaHack/nigahub')
-SaveManager:BuildConfigSection(Tabs['UI Settings'])
-ThemeManager:ApplyToTab(Tabs['UI Settings'])
-SaveManager:LoadAutoloadConfig()
