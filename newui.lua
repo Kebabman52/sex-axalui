@@ -2981,12 +2981,12 @@ function Library:CreateWindow(...)
 
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
-        BackgroundColor3 = Library.MainColor;
+        BackgroundColor3 = Library.MainColor,
         BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
-        Visible = false;
-        ZIndex = 1;
+        Visible = false,
+        ZIndex = 1,
         Parent = ScreenGui;
     });
     Library:Create('UICorner', {
@@ -2996,12 +2996,12 @@ function Library:CreateWindow(...)
     Library:MakeDraggable(Outer, 25);
 
     local Inner = Library:Create('Frame', {
-        BackgroundColor3 = Library.MainColor;
-        BorderColor3 = Library.AccentColor;
-        BorderMode = Enum.BorderMode.Inset;
-        Position = UDim2.new(0, 1, 0, 1);
-        Size = UDim2.new(1, -2, 1, -2);
-        ZIndex = 1;
+        BackgroundColor3 = Library.MainColor,
+        BorderColor3 = Library.AccentColor,
+        BorderMode = Enum.BorderMode.Inset,
+        Position = UDim2.new(0, 1, 0, 1),
+        Size = UDim2.new(1, -2, 1, -2),
+        ZIndex = 1,
         Parent = Outer;
     });
     local Stroke = Library:Create('UIStroke', {
